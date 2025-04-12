@@ -1,0 +1,24 @@
+/* Topbar Styles */
+.topbar {
+  background-color: #4f46e5; /* Indigo-500 */
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Sticks to the top of the page */
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: center; /* Center the title */
+  align-items: center;
+}
+
+.topbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif; /* Modern font */
+  text-transform: uppercase; /* Make the text uppercase for emphasis */
+  letter-spacing: 1px; /* Add spacing between letters */
+}

@@ -1,0 +1,301 @@
+@layer base, components, utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap');
+
+:root {
+  /* Color Scheme (Modern) */
+  --color-primary: 99 102 241;  /* Indigo-500 */
+  --color-secondary: 236 72 153; /* Pink-500 */
+  --color-dark: 15 23 42;       /* Slate-900 */
+  --color-light: 248 250 252;   /* Slate-50 */
+  --color-success: 16 185 129;  /* Emerald-500 */
+  --color-error: 239 68 68;     /* Red-500 */
+
+  /* Typography */
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Dynamic scaling */
+  --text-base: clamp(1rem, 0.75vw + 0.8rem, 1.25rem);
+  --spacing-unit: clamp(0.5rem, 0.5vw + 0.5rem, 1.5rem);
+}
+
+/* Light/Dark Mode (Auto-detected) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: rgb(var(--color-dark));
+    --bg-color: rgb(var(--color-light));
+    --surface-color: white;
+    --border-color: rgb(226 232 240); /* Slate-200 */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: rgb(var(--color-light));
+    --bg-color: rgb(var(--color-dark));
+    --surface-color: rgb(30 41 59); /* Slate-800 */
+    --border-color: rgb(51 65 85);  /* Slate-700 */
+  }
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    color: var(--text-color);
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+    display: grid;
+    place-items: center;
+    padding: var(--spacing-unit);
+    overflow: hidden; /* Prevent particles from overflowing */
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px; /* Particle size */
+    opacity: 0.5;
+    animation: particleAnimation 10s linear infinite;
+    pointer-events: none; /* Prevent interaction with particles */
+  }
+
+  h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-unit);
+    background: linear-gradient(90deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  label {
+    display: block;
+    margin-bottom: calc(var(--spacing-unit) / 3); /* Reduce label margin */
+    font-weight: 500;
+    font-size: 0.875rem; /* Slightly smaller font size */
+  }
+
+  input {
+    width: 100%;
+    padding: calc(var(--spacing-unit) / 2); /* Reduce input padding */
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--spacing-unit) / 2);
+    background: var(--surface-color);
+    color: var(--text-color); /* Ensure text is visible */
+    transition: all 0.2s;
+    font-size: 0.875rem; /* Slightly smaller font size */
+  }
+
+  input:focus {
+    outline: 2px solid rgb(var(--color-primary));
+    outline-offset: 2px;
+  }
+}
+
+/* Particle Animation */
+@keyframes particleAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .card {
+    width: min(100%, 480px);
+    padding: calc(var(--spacing-unit) * 2);
+    background: var(--surface-color);
+    border-radius: calc(var(--spacing-unit) * 1.5);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-unit);
+  }
+
+  /* Modern Form Card */
+  .form-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 
+      0 8px 32px rgba(31, 38, 135, 0.15),
+      0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      0 12px 40px rgba(31, 38, 135, 0.2),
+      0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Form Groups with Floating Labels */
+  .form-group {
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: white;
+    padding: 0 8px;
+    font-size: 0.85rem;
+    color: #6366f1;
+    z-index: 1;
+  }
+
+  /* Ensure input text is visible */
+  .form-group input {
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    color: #1f2937; /* Set text color to dark gray */
+  }
+
+  .form-group input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    outline: none;
+    color: #1f2937; /* Ensure text color remains visible on focus */
+  }
+
+  /* Form Actions with Holographic Buttons */
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Modern Button Styles */
+  .holographic-btn {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+    flex: 1;
+    text-align: center;
+    color: white;
+  }
+
+  .holographic-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      #6366f1,
+      #8b5cf6,
+      #ec4899,
+      #f97316,
+      #6366f1
+    );
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: holographic 8s ease infinite;
+    transition: all 0.3s ease;
+  }
+
+  .holographic-btn:hover::before {
+    animation: holographic 4s ease infinite;
+  }
+
+  .holographic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .cancel-btn {
+    background: linear-gradient(45deg, #f43f5e, #ec4899);
+  }
+
+  /* Micro-interactions for form inputs */
+  .form-group input:valid {
+    border-color: #10b981;
+  }
+
+  .form-group input:invalid:not(:placeholder-shown) {
+    border-color: #f43f5e;
+  }
+}
+
+/* Holographic Animation */
+@keyframes holographic {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0% { opacity: 0.6; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.6; transform: scale(0.95); }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
