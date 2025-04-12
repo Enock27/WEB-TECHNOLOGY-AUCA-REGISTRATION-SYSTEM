@@ -1,0 +1,17 @@
+auca/registration/ac/auca/registration/model/Semester.class
+auca/registration/ac/auca/registration/Application.class
+auca/registration/ac/auca/registration/service/StudentRegistrationService.class
+auca/registration/ac/auca/registration/repository/AcademicUnitRepository.class
+auca/registration/ac/auca/registration/service/StudentService.class
+auca/registration/ac/auca/registration/model/Course.class
+auca/registration/ac/auca/registration/repository/StudentRegistrationRepository.class
+auca/registration/ac/auca/registration/CorsConfig.class
+auca/registration/ac/auca/registration/repository/CourseRepository.class
+auca/registration/ac/auca/registration/controller/StudentController.class
+auca/registration/ac/auca/registration/model/AcademicUnit.class
+auca/registration/ac/auca/registration/service/AcademicUnitService.class
+auca/registration/ac/auca/registration/model/EAcademicUnit.class
+auca/registration/ac/auca/registration/model/Student.class
+auca/registration/ac/auca/registration/repository/StudentRepository.class
+auca/registration/ac/auca/registration/model/StudentRegistration.class
+auca/registration/ac/auca/registration/controller/AcademicUnitController.class

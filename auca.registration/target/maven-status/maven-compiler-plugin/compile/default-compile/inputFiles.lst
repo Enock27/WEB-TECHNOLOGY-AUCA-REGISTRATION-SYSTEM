@@ -1,0 +1,17 @@
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/Application.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/CorsConfig.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/controller/AcademicUnitController.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/controller/StudentController.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/model/AcademicUnit.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/model/Course.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/model/EAcademicUnit.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/model/Semester.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/model/Student.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/model/StudentRegistration.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/repository/AcademicUnitRepository.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/repository/CourseRepository.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/repository/StudentRegistrationRepository.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/repository/StudentRepository.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/service/AcademicUnitService.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/service/StudentRegistrationService.java
+/home/choice/Documents/AUCA-SEM-4-5-6-7-8/web-tech/tasks/web-tek-assgn1.1/auca.registration/auca.registration/src/main/java/auca/registration/ac/auca/registration/service/StudentService.java
